@@ -1,0 +1,21 @@
+project:
+  type: website
+
+website:
+  title: "Specify"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: formulaire.qmd
+        text: Formulaire
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true

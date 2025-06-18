@@ -1,0 +1,124 @@
+---
+title: "Formulaire - Cahier des Charges"
+format:
+  html:
+    embed-resources: true
+    toc: true
+---
+
+```{=html}
+<form id="cahier-form" style="max-width: 800px; margin-bottom: 2rem;">
+
+  <h2>Contexte général</h2>
+
+  <label>1. Nom du projet<br><input type="text" name="Nom du projet" placeholder="Exemple : Tableau de bord des ventes 2024" required></label><br><br>
+
+  <label>2. Objectif principal<br><input type="text" name="Objectif principal" placeholder="(Informer, convaincre, explorer, comparer, alerter, etc.)"></label><br><br>
+
+  <label>3. Public cible<br><textarea name="Public cible" rows="4" cols="80"></textarea></label><br><br>
+
+  <label>4. Contexte du projet<br><textarea name="Contexte du projet" rows="4" cols="80" placeholder="Décrire brièvement pourquoi ce projet est lancé. Lié à une stratégie, une problématique, une échéance, etc."></textarea></label><br><br>
+
+  <h2>Données</h2>
+
+  <label>6. Description des données disponibles<br>
+  <textarea name="Description des données" rows="4" cols="80" placeholder="Sources, formats, volume, fréquence de mise à jour"></textarea></label><br><br>
+
+  <label>7. Statut des données<br>
+    <input type="checkbox" name="Statut des données" value="Déjà disponibles"> Déjà disponibles
+    <input type="checkbox" name="Statut des données" value="À collecter"> À collecter
+    <input type="checkbox" name="Statut des données" value="En cours de préparation"> En cours de préparation
+  </label><br><br>
+
+  <label>8. Qualité & responsabilité des données<br>
+  <textarea name="Qualité des données" rows="4" cols="80" placeholder="Responsable, contrôle qualité, accès"></textarea></label><br><br>
+
+  <label>9. Contraintes de confidentialité ou de sécurité<br>
+    <input type="checkbox" name="Confidentialité" value="RGPD"> RGPD / données personnelles
+    <input type="checkbox" name="Confidentialité" value="Accès restreint"> Accès restreint
+    <input type="checkbox" name="Confidentialité" value="Chiffrement"> Chiffrement requis
+    <input type="text" name="Autre confidentialité" placeholder="Autre...">
+  </label><br><br>
+
+  <h2>Contenu & représentation</h2>
+
+  <label>10. Questions clés<br><textarea name="Questions clés" rows="4" cols="80" placeholder="(Liste des questions auxquelles la tableau de bord doit répondre)"></textarea></label><br><br>
+
+  <label>11. Indicateurs principaux / KPI<br><textarea name="KPI" rows="4" cols="80" placeholder="(Liste des mesures ou indicateurs à visualiser et des champs qui permettront de construire chaque graphique ou des calculs nécessaires ainsi que le type de graphique attendu)"></textarea></label><br><br>
+
+  <label>12. Filtres / interactions nécessaires<br><textarea name="Filtres" rows="4" cols="80" placeholder="(Liste de filtres nécessaire, indiquer si le filtre doit s’apparenter à un bouton ou doit provenir d’un autre grpahique)"></textarea></label><br><br>
+
+  <h2>Design & ergonomie</h2>
+
+  <label>14. Charte graphique à respecter<br>
+    <input type="checkbox" name="Charte graphique" value="Oui"> Oui
+    <input type="checkbox" name="Charte graphique" value="Non"> Non, carte blanche
+    <input type="text" name="Lien ou fichier charte" placeholder="Lien ou fichier à joindre">
+  </label><br><br>
+
+  <h2>Technique</h2>
+
+  <label>18. Outils ou technologies imposées<br>
+    <input type="checkbox" name="Outils" value="Tableau"> Tableau
+    <input type="checkbox" name="Outils" value="Power BI"> Power BI
+    <input type="checkbox" name="Outils" value="Looker"> Looker / Google Data Studio
+    <input type="checkbox" name="Outils" value="Libre"> Aucun / libre choix
+    <input type="text" name="Autre outil" placeholder="Autre...">
+  </label><br><br>
+
+  <label>19. Intégration nécessaire<br>
+    <input type="checkbox" name="Intégration" value="Intranet"> Intranet
+    <input type="checkbox" name="Intégration" value="Site web"> Site web
+    <input type="checkbox" name="Intégration" value="Application mobile"> Application mobile
+    <input type="text" name="Autre intégration" placeholder="Autre...">
+  </label><br><br>
+
+  <label>20. Contraintes d’accessibilité ou performance<br>
+  <textarea name="Accessibilité" rows="4" cols="80" placeholder="Navigation clavier, responsive, etc."></textarea></label><br><br>
+
+  <h2>Suivi & calendrier</h2>
+
+  <label>21. Étapes importantes et délais<br>
+  <textarea name="Délais" rows="4" cols="80" placeholder="Kick-off, livrables, deadline..."></textarea></label><br><br>
+
+  <label>22. Interlocuteurs clés<br>
+  <textarea name="Interlocuteurs" rows="4" cols="80" placeholder="Chef de projet, contact technique, validation..."></textarea></label><br><br>
+
+  <label>23. Budget estimé (optionnel)<br><input type="text" name="Budget estimé"></label><br><br>
+
+  <h2>Annexes</h2>
+
+  <label>📎 Liens ou fichiers utiles<br><textarea name="Annexes_liens" rows="3" cols="80"></textarea></label><br><br>
+
+  <label>📷 Logos, palettes, captures, exemples, maquettes<br><textarea name="Annexes_visuels" rows="3" cols="80"></textarea></label><br><br>
+
+  <label>🔗 Accès aux jeux de données ou exemples d’exports<br><textarea name="Annexes_donnees" rows="3" cols="80"></textarea></label><br><br>
+
+  <button type="button" onclick="genererPDF()">📄 Générer le PDF</button>
+
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  async function genererPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    const form = document.getElementById("cahier-form");
+    const data = new FormData(form);
+    let y = 10;
+
+    doc.setFontSize(12);
+    for (const [key, value] of data.entries()) {
+      const text = `${key} : ${value}`;
+      const lines = doc.splitTextToSize(text, 180);
+      doc.text(lines, 10, y);
+      y += lines.length * 7;
+      if (y > 270) {
+        doc.addPage();
+        y = 10;
+      }
+    }
+
+    doc.save("cahier_des_charges.pdf");
+  }
+</script>

@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "formulaire.html",
+    "href": "formulaire.html",
+    "title": "Formulaire - Cahier des Charges",
+    "section": "",
+    "text": "Contexte général\n\n1. Nom du projet\n2. Objectif principal\n3. Public cible\n\n\n4. Contexte du projet\n\n\n\nDonnées\n\n6. Description des données disponibles\n\n\n7. Statut des données  Déjà disponibles  À collecter  En cours de préparation \n8. Qualité & responsabilité des données\n\n\n9. Contraintes de confidentialité ou de sécurité  RGPD / données personnelles  Accès restreint  Chiffrement requis  \n\nContenu & représentation\n\n10. Questions clés\n\n\n11. Indicateurs principaux / KPI\n\n\n12. Filtres / interactions nécessaires\n\n\n\nDesign & ergonomie\n\n14. Charte graphique à respecter  Oui  Non, carte blanche  \n\nTechnique\n\n18. Outils ou technologies imposées  Tableau  Power BI  Looker / Google Data Studio  Aucun / libre choix  \n19. Intégration nécessaire  Intranet  Site web  Application mobile  \n20. Contraintes d’accessibilité ou performance\n\n\n\nSuivi & calendrier\n\n21. Étapes importantes et délais\n\n\n22. Interlocuteurs clés\n\n\n23. Budget estimé (optionnel)\n\nAnnexes\n\n📎 Liens ou fichiers utiles\n\n\n📷 Logos, palettes, captures, exemples, maquettes\n\n\n🔗 Accès aux jeux de données ou exemples d’exports\n\n\n📄 Générer le PDF"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Specify",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  }
+]
