@@ -3799,7 +3799,20 @@ vertical-align: -.125em;
 }</script>
 
 
-<style type="text/css">
+<style type="text/css">.large-input {
+padding-left: 0; width: 100%;
+max-width: 1000Px;
+padding: 14px 12px; 
+font-size: 16px; 
+line-height: 1.4;
+border: 1px solid #ccc;
+border-radius: 6px;
+box-sizing: border-box;
+}
+.large-input::placeholder {
+font-size: 10px; 
+color: #888; 
+}
 </style>
 </head>
 
@@ -3872,8 +3885,10 @@ vertical-align: -.125em;
 <h2 class="anchored">
 Contexte général
 </h2>
-<p><label>1. Nom du projet<br><input type="text" name="Nom du projet" placeholder="Exemple : Tableau de bord des ventes 2024" required></label><br><br></p>
-<p><label>2. Objectif principal<br><input type="text" name="Objectif principal" placeholder="(Informer, convaincre, explorer, comparer, alerter, etc.)"></label><br><br></p>
+<p><label>1. Nom du projet<br><input class="large-input" type="text" name="Nom du projet" placeholder="Ex : Tableau de bord des ventes 2024" required></label><br><br></p>
+<label>2. Objectif principal<br>
+<textarea type="text" name="Objectif principal" rows="4" cols="80" placeholder="(Informer, convaincre, explorer, comparer, alerter, etc.)"></textarea>
+<p><br><br></p>
 <label>3. Public cible<br>
 <textarea name="Public cible" rows="4" cols="80"></textarea>
 <p><br><br></p>
@@ -4364,7 +4379,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
 
 
 
-</label></label></label></label></label></label></label></label></label></label></label></label></label></form></main> <!-- /main -->
+</label></label></label></label></label></label></label></label></label></label></label></label></label></label></form></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

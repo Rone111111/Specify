@@ -1,1 +1,16 @@
-/* css styles */
+.large-input {
+  padding-left: 0; 
+  width: 100%;
+  max-width: 1000Px;
+  padding: 14px 12px;           /* ↑ augmente la hauteur */
+  font-size: 16px;              /* ↑ rend le placeholder plus lisible */
+  line-height: 1.4;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.large-input::placeholder {
+  font-size: 10px;   /* ou 12px si tu veux plus petit */
+  color: #888;       /* optionnel : couleur plus claire */
+}

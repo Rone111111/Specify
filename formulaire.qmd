@@ -11,13 +11,9 @@ format:
 
   <h2>Contexte général</h2>
 
-    <label>1. Nom du projet<br>
-     <input class="large-input" type="text" name="Nom du projet" placeholder="Exemple : Tableau de bord des ventes 2024" required>
-     </label><br><br>
+  <label>1. Nom du projet<br><input class="large-input" type="text" name="Nom du projet" placeholder="Ex : Tableau de bord des ventes 2024" required></label><br><br>
 
-    <label>2. Objectif principal<br>
-    <input class="large-input" type="text" name="Objectif principal" placeholder="(Informer, convaincre, explorer, comparer, alerter, etc.)">
-    </label><br><br>
+  <label>2. Objectif principal<br><textarea type="text" name="Objectif principal" rows="4" cols="80" placeholder="(Informer, convaincre, explorer, comparer, alerter, etc.)"></textarea></label><br><br>
 
   <label>3. Public cible<br><textarea name="Public cible" rows="4" cols="80"></textarea></label><br><br>
 
